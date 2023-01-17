@@ -1,1 +1,6 @@
-{"price": 1200,"spe_level": "alto","where_to_buy": "tienda de ciclismo","category": "mountain bike","weight": 12.5,"frame": "aluminio","fork": "RockShox Recon Silver TK Solo Air","wheels": "aluminio","wheel_size": "27.5", "brakes": "de disco hidráulicos","groupset": "Shimano XT","drivetrain": "1x12","suspension": "delantera","front_travel": 150,"seatpost": "Rigid","brand_site": "https://www.giant-bicycles.com"}
+{"name": "Snake","price": 1200,"spe_level": "alto","where_to_buy": "tienda de ciclismo","category": "mountain bike","weight": 12.5,"frame": "aluminio",
+"fork": "RockShox Recon Silver TK Solo Air","wheels": "aluminio","wheel_size": "27.5", "brakes": "de disco hidráulicos","groupset": "Shimano XT","drivetrain": "1x12","suspension": "delantera","front_travel": 150,"seatpost": "Rigid","brand_site": "https://www.giant-bicycles.com"}
+
+// curl -X POST -H "Content-Type: application/json" -d '{"name": "Snake","price": 1200,"spe_level": "alto","where_to_buy": "tienda de ciclismo","category": "mountain bike","weight": 12.5,"frame": "aluminio",
+// "fork": "RockShox Recon Silver TK Solo Air","wheels": "aluminio","wheel_size": "27.5", "brakes": "de disco hidráulicos","groupset": "Shimano XT","drivetrain": "1x12","suspension": "delantera","front_travel": 150,"seatpost": "Rigid","brand_site": "https://www.giant-bicycles.com"}'
+//  http://localhost:3000/api/bike
