@@ -19,7 +19,6 @@ let environment = process.env.NODE_ENV || "development";
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });
-      console.log('MongoDB connected');
     },
     disconnect: done => {
       mongoose.disconnect(done);
