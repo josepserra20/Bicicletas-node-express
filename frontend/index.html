@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="css/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Bicis Disponibles</h1>
+
+    <label for="bike-filter">Search by bike name:</label>
+    <input type="text" id="bike-filter" />
+    
+    <!-- <ul id="bike-list"></ul> -->
+    <div class="card-group" style="display: block !important;"id="bike-list"></div>
+
+    
+    <script>
+
+      const bikeList = document.getElementById('bike-list');
+      const bikeFilter = document.getElementById('bike-filter');
+    
+      fetch('http://localhost:3000/api/bike')
+        .then(response => response.json())
+        .then(data => {
+
+          function filterBikesByName(name) {
+            return data.filter(bike => bike.name.toLowerCase().includes(name.toLowerCase()));
+          }
+    
+          function renderBikeList(bikes) {
+            const bikeListItems = bikes.map(bike => `
+            
+            <div class="card">
+              <img class="card-img-top" style="max-width: 20%" src="./img/bici.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">${bike.name}</h5>
+                <strong>Price:</strong> ${bike.price}<br>
+                <strong>Brand:</strong> ${bike.brand}<br>
+                <strong>Category:</strong> ${bike.category}<br><br>
+                <button onclick="onClick=getStoresByBikeId('${bike._id}')">Buscar tiendas</button>
+              </div>
+              </div>
+            `).join('');
+            bikeList.innerHTML = bikeListItems;
+          }
+         
+          renderBikeList(data);
+    
+          bikeFilter.addEventListener('input', () => {
+            const filteredBikes = filterBikesByName(bikeFilter.value);
+            renderBikeList(filteredBikes);
+          });
+
+            
+        })
+        
+        .catch(error => {
+          console.error(error);
+        });
+
+        async function getStoresByBikeId(id) {
+                const response = await fetch(`http://localhost:3000/api/stock/all/stores/${id}`);
+                const stores = await response.json(); 
+                if (stores.length > 0) {
+                    window.location.href = `tiendas.html?id=${id}`;
+                } else {
+                    alert('No hay tiendas disponibles');
+                }
+        }
+    </script>
+    </div>
+</body>
+</html>

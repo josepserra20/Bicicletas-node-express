@@ -1,6 +1,5 @@
 const express = require("express");
 const bikeController = require("../controllers/bike");
-const bike = require("../models/bike");
 
 const api = express.Router();
 

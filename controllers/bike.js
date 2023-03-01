@@ -1,5 +1,4 @@
 const Bike = require("../models/bike");
-const Service = require("../services/bike");
 
 const bikeModule = ( () => {
 

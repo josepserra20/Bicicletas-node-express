@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="css/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light" style="justify-content: center !important;">
+        <a class="navbar-brand"  href="index.html">Bicis</a>
+      </nav>
+
+    <div class="container">
+       
+    <h1>Stock</h1>
+
+    <ul id="stock-list"></ul>
+
+ <script>
+
+    const stockList = document.getElementById('stock-list');
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const bikeId = urlParams.get('id');
+
+    fetch('http://localhost:3000/api/stock/all/stores/' + bikeId)
+        .then(response => response.json())
+        .then(data => {
+            function renderStockList(stock) {
+            const stockListItems = stock.map(stock => `
+            <div class="card">
+                <div class="card-body">
+                <strong>Bicicleta:</strong> ${stock.bike.name}<br>
+                <strong>Precio:</strong> ${stock.price}<br>
+                <strong>Tienda:</strong> ${stock.store.name}<br>
+                <p id="as"><strong>Disponibilidad:</strong> ${stock.Totalstock - stock.Rentable} </p>
+                <button id="btn" onclick="onClick=alquilar('${stock.bike._id}', '${stock.store._id}')">Alquilar</button>
+              </div>
+            </div>
+            `).join('');
+
+            stockList.innerHTML = stockListItems;
+          }
+
+          renderStockList(data);
+            })
+
+        .catch(error => {
+            console.error(error);
+        });
+
+        async function alquilar(bikeId, storeId) {
+
+            const popUp = document.getElementById('popUp');
+                
+                const data = {
+                    bike: bikeId,
+                    store: storeId
+                }
+                
+                fetch('http://localhost:3000/api/rentable/new', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        alert("no hay stock disponible en la tienda seleccionada");
+                        throw new Error("HTTP error, status = " + response.status);
+                    }
+                return response.json();
+                })
+                .then(data => {
+                    alert("Alquiler realizado con exito");
+                    
+                })
+                .catch(error => console.error(error));
+
+        }
+ </script>
+ <div id="popUp"></div>
+ </div>
+</body>
+</html>

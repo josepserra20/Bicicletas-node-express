@@ -58,6 +58,18 @@ const stockModule = ( () => {
         }
     }
 
+    async function getAllStoresByBikesId(req, res) {
+
+        const { id } = req.params;
+
+        try {
+            const stores = await Stock.find({ bike: id }).populate('store').populate('bike');
+            res.status(200).json(stores);
+        } catch (error) {
+            res.status(500).send(error);
+        }
+    }
+
     async function deleteStock(req, res) {
         
         const { id } = req.params;
@@ -75,6 +87,7 @@ const stockModule = ( () => {
         updateRentable,
         getAllStock,
         getAllBikesByStoreId,
+        getAllStoresByBikesId,
     }
 
 })();

@@ -51,7 +51,7 @@ const BikeSchema = Schema({
     seatpost: { 
         type: String, 
         required: true },
-    brand_site: { 
+    brand: { 
         type: String, 
         required: true }
 });

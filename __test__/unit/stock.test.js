@@ -59,7 +59,7 @@ describe('Test CRUD stock', () => {
             
         const response = await request(app).get("/api/stock/all");
         const data = response.body;
-        expect(data.length).toBe(2);
+        expect(data.length).toBe(7);
         expect(response.statusCode).toBe(200);
     
     })
@@ -75,4 +75,32 @@ describe('Test CRUD stock', () => {
         expect(data.Rentable).toBe(1);
         expect(response.statusCode).toBe(200);
     })
+
+    test('get all bikes by store id', async () => {
+                    
+            const response = await request(app).get("/api/stock/all/bikes/63c53a2559a5e542f4b0b740");
+            const data = response.body;
+            expect(data.length).toBe(1);
+            expect(response.statusCode).toBe(200);
+        })
+
+        test('get all stores by bike id', async () => {
+                            
+                    const response = await request(app).get("/api/stock/all/stores/63c53a2559a5e542f4b0b765");
+                    const data = response.body;
+                    expect(data.length).toBe(1);
+                    expect(response.statusCode).toBe(200);
+                })
+
+                test('rent a bike', async () => {
+                                        
+                        const response = await request(app).post("/api/rentable/new").send({
+                            store: "63c53a2559a5e542f4b0b740",
+                            bike: "63c53a2559a5e542f4b0b765",
+                        });
+                        const data = response.body;
+                        expect(data.Totalstock).toBe(2);
+                        expect(data.Rentable).toBe(2);
+                        expect(response.statusCode).toBe(200);
+                    })     
 });

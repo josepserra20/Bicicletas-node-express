@@ -7,6 +7,7 @@ const StockSchema = Schema({
         type: Schema.Types.ObjectId,
         default: () => new mongoose.Types.ObjectId(),
     },
+    price: {type: Number, required: true},
     Totalstock: {type: Number,
     default: 1 },
     Rentable: {type: Number, default: 0},

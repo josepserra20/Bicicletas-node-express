@@ -46,7 +46,7 @@ describe('Test CRUD bike', () => {
             suspension: "suspension",
             front_travel: "100",
             seatpost: "suspension",
-            brand_site: "https://www.giant-bicycles.com/es/mountain-bikes/marlin-6-gen-2-2021",
+            brand: "https://www.giant-bicycles.com/es/mountain-bikes/marlin-6-gen-2-2021",
 
         });
         const data = response.body;
@@ -55,10 +55,10 @@ describe('Test CRUD bike', () => {
     });
 
     test('get bike by name', async () => { 
-        const response = await request(app).get('/api/bike/Marlin 6 gen 2');
+        const response = await request(app).get('/api/bike/Grail');
         const data = response.body;
 
-        expect(data.name).toBe("Marlin 6 gen 2");
+        expect(data.name).toBe("Grail");
         expect(response.statusCode).toBe(200);
 
     });
@@ -67,7 +67,7 @@ describe('Test CRUD bike', () => {
         const response = await request(app).get('/api/bike');
         const data = response.body;
 
-        expect(data.length).toBe(5);
+        expect(data.length).toBe(8);
         expect(response.statusCode).toBe(200);
 
     });
@@ -92,9 +92,10 @@ describe('Test CRUD bike', () => {
 
         const getTotalBikes = await request(app).get('/api/bike');
         const dataTotalBikes = getTotalBikes.body;
-        expect(dataTotalBikes.length).toBe(4);
+        expect(dataTotalBikes.length).toBe(7);
 
     });
+
 });
 
 

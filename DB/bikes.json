@@ -1,7 +1,7 @@
 [{
   "_id": "63c53a2559a5e542f4b0b765",
   "name": "Marlin 6 gen 4",
-  "price": 1200,
+  "price": 1400,
   "spe_level": "alto",
   "category": "mountain bike",
   "weight": 12.5,
@@ -15,14 +15,14 @@
   "suspension": "delantera",
   "front_travel": 150,
   "seatpost": "Rigid",
-  "brand_site": "https://www.giant-bicycles.com"
+  "brand": "https://www.giant-bicycles.com"
 },
 {
   "_id": "63c53a2559a5e542f4b0b766",
-  "name": "Marlin 6 gen 2",
-  "price": 1200,
+  "name": "X-Caliber",
+  "price": 2200,
   "spe_level": "alto",
-  "category": "mountain bike",
+  "category": "Road bike",
   "weight": 12.5,
   "frame": "aluminio",
   "fork": "RockShox Recon Silver TK Solo Air",
@@ -34,12 +34,12 @@
   "suspension": "delantera",
   "front_travel": 150,
   "seatpost": "Rigid",
-  "brand_site": "https://www.giant-bicycles.com"
+  "brand": "https://www.giant-bicycles.com"
 },
 {
   "_id": "63c53a2559a5e542f4b0b767",
-  "name": "2",
-  "price": 1200,
+  "name": "Grizl",
+  "price": 3500,
   "spe_level": "alto",
   "category": "mountain bike",
   "weight": 12.5,
@@ -53,12 +53,12 @@
   "suspension": "delantera",
   "front_travel": 150,
   "seatpost": "Rigid",
-  "brand_site": "https://www.giant-bicycles.com"
+  "brand": "https://www.giant-bicycles.com"
 },
 {
   "_id": "63c53a2559a5e542f4b0b768", 
-  "name": "1",
-  "price": 1200,
+  "name": "Neuron",
+  "price": 8000,
   "spe_level": "alto",
   "category": "mountain bike",
   "weight": 12.5,
@@ -72,6 +72,61 @@
   "suspension": "delantera",
   "front_travel": 150,
   "seatpost": "Rigid",
-  "brand_site": "https://www.giant-bicycles.com"
+  "brand": "https://www.giant-bicycles.com"
+},
+{
+  "_id": "63c53a2559a5e542f4b0b153",
+  "name": "Nuroad",
+  "price": 800,
+  "spe_level": "alto",
+  "category": "Road bike",
+  "weight": 12.5,
+  "frame": "aluminio",
+  "fork": "RockShox Recon Silver TK Solo Air",
+  "wheels": "aluminio",
+  "wheel_size": "27.5",
+  "brakes": "de disco hidráulicos",
+  "groupset": "Shimano XT",
+  "drivetrain": "1x12",
+  "suspension": "delantera",
+  "front_travel": 150,
+  "seatpost": "Rigid",
+  "brand": "https://www.giant-bicycles.com"
+},{
+  "_id": "63c53a2559a5e542f4b0b748",
+  "name": "Grail",
+  "price": 2200,
+  "spe_level": "alto",
+  "category": "Road bike",
+  "weight": 12.5,
+  "frame": "aluminio",
+  "fork": "RockShox Recon Silver TK Solo Air",
+  "wheels": "aluminio",
+  "wheel_size": "27.5",
+  "brakes": "de disco hidráulicos",
+  "groupset": "Shimano XT",
+  "drivetrain": "1x12",
+  "suspension": "delantera",
+  "front_travel": 150,
+  "seatpost": "Rigid",
+  "brand": "https://www.giant-bicycles.com"
+},{
+  "_id": "63c53a2559a5e542f4b0b769",
+  "name": "Ultimate",
+  "price": 5320,
+  "spe_level": "alto",
+  "category": "Road bike",
+  "weight": 12.5,
+  "frame": "aluminio",
+  "fork": "RockShox Recon Silver TK Solo Air",
+  "wheels": "aluminio",
+  "wheel_size": "27.5",
+  "brakes": "de disco hidráulicos",
+  "groupset": "Shimano XT",
+  "drivetrain": "1x12",
+  "suspension": "delantera",
+  "front_travel": 150,
+  "seatpost": "Rigid",
+  "brand": "https://www.giant-bicycles.com"
 }
 ]
