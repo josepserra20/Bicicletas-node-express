@@ -3,23 +3,27 @@
     "_id": "63c53a2559a5e542f4b0b732",
     "store": "63c53a2559a5e542f4b0b770",
     "bike": "63c53a2559a5e542f4b0b769",
+    "Totalstock": 100,
     "price": 1000
 },
 {
     "_id": "63c53a2559a5e542f4b0b733",
     "price": 1000,
+    "Totalstock": 100,
     "store": "63c53a2559a5e542f4b0b76d",
     "bike": "63c53a2559a5e542f4b0b768"
 },
 {
     "_id": "63c53a2559a5e542f4b0b734",
     "price": 1000,
+    "Totalstock": 100,
     "store": "63c53a2559a5e542f4b0b770",
     "bike": "63c53a2559a5e542f4b0b768"
 },
 {
     "_id": "63c53a2559a5e542f4b0b735",
     "price": 1000,
+    "Totalstock": 100,
     "store": "63c53a2559a5e542f4b0b76d",
     "bike": "63c53a2559a5e542f4b0b153"
 },
@@ -27,10 +31,12 @@
     "_id": "63c53a2559a5e542f4b0b736",
     "store": "63c53a2559a5e542f4b0b770",
     "price": 1000,
+    "Totalstock": 100,
     "bike": "63c53a2559a5e542f4b0b153"
 },
 {   "_id": "63c53a2559a5e542f4b0b737",
     "price": 1000,
+    "Totalstock": 100,
     "bike": "63c53a2559a5e542f4b0b766",
     "store": "63c53a2559a5e542f4b0b76d"
 }
