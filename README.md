@@ -27,7 +27,7 @@ A REST API built with Node.js, Express, Jest, MongoDB, and Mongoose for a bike a
 
 All controllers use module pattern.
 
-## DEstructuring 
+## Destructuring 
 ![](/IMGreadme/descructuring.PNG)
 
 ## Async 
