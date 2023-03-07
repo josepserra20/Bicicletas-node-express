@@ -18,3 +18,26 @@ A REST API built with Node.js, Express, Jest, MongoDB, and Mongoose for a bike a
 3.  Create a `.env` file in the root of the project and configure the necessary environment variables.
 
 4.  Start the server with `npm start`.
+
+# Projects features
+
+## Module pattern 
+
+![](/IMGreadme/module.PNG)
+
+All controllers use module pattern.
+
+## DEstructuring 
+![](/IMGreadme/descructuring.PNG)
+
+## Async 
+![](/IMGreadme/async.PNG)
+
+## Environments
+![](/IMGreadme/environment.PNG)
+
+## Environment variables
+![](/IMGreadme/variables.PNG)
+
+## Arrow function
+![](/IMGreadme/arrow.PNG)
