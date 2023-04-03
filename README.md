@@ -19,6 +19,10 @@ A REST API built with Node.js, Express, Jest, MongoDB, and Mongoose for a bike a
 
 4.  Start the server with `npm start`.
 
+# Front
+
+In order to see the front run `npm run start` and go to the path [http://localhost:3000/](http://localhost:3000/)
+
 # Projects features
 
 ## Module pattern 
