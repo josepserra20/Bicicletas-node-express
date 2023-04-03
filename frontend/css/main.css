@@ -1,0 +1,61 @@
+.h1-b {
+    margin-top: 10%;
+}
+.tabla {
+display: flex;
+flex-direction: row;
+gap: 100px;
+flex-wrap: wrap;
+justify-content: center;
+margin-top: 10%;
+
+}
+
+.carta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+    max-width: 500px;
+    
+}
+
+.tabla .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color: white;
+    margin-right: 20px;
+}
+
+h1 h5 {
+  font-size: 30px;
+    font-weight: bold;
+}
+
+.search label {
+  font-size: 20px;
+  font-weight: bold;
+
+}
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+ 
+
+}
+
+.search input {
+  width: 300px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+
+

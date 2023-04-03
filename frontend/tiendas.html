@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="css/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <nav class="navbar navbar-light bg-light" style="justify-content: center !important;">
@@ -15,9 +16,9 @@
 
     <div class="container">
        
-    <h1>Stock</h1>
+    <h1 class="h1-b">Stock</h1>
 
-    <ul id="stock-list"></ul>
+    <div class="tabla" id="stock-list"></div>
 
  <script>
 
@@ -26,35 +27,52 @@
     const urlParams = new URLSearchParams(window.location.search);
     const bikeId = urlParams.get('id');
 
-    fetch('http://localhost:3000/api/stock/all/stores/' + bikeId)
+    
+        fetch('http://localhost:3000/api/stock/all/stores/' + bikeId)
         .then(response => response.json())
         .then(data => {
-            function renderStockList(stock) {
+            async function renderStockList(stock) {
             const stockListItems = stock.map(stock => `
-            <div class="card">
-                <div class="card-body">
+            <div class="carta">
+                <div>
+                    <h5 class="">${stock.store.name}</h5>
                 <strong>Bicicleta:</strong> ${stock.bike.name}<br>
                 <strong>Precio:</strong> ${stock.price}<br>
-                <strong>Tienda:</strong> ${stock.store.name}<br>
-                <p id="as"><strong>Disponibilidad:</strong> ${stock.Totalstock - stock.Rentable} </p>
-                <button id="btn" onclick="onClick=alquilar('${stock.bike._id}', '${stock.store._id}')">Alquilar</button>
+                <p id="dispo"><strong>Disponibilidad:</strong> ${stock.Totalstock - stock.Rentable}</p>
+                <button class="btn btn-primary" onclick="onClick=alquilar('${stock.bike._id}', '${stock.store._id}')">Alquilar</button>
               </div>
             </div>
             `).join('');
 
             stockList.innerHTML = stockListItems;
+            CambiosCss();
           }
-
           renderStockList(data);
+          
             })
-
+ 
         .catch(error => {
             console.error(error);
         });
 
-        async function alquilar(bikeId, storeId) {
+        function CambiosCss() {
 
-            const popUp = document.getElementById('popUp');
+            var b = document.querySelectorAll('[class=carta]');
+            [...b].map((item, index) => {
+                if (item.querySelector('#dispo').innerHTML == "<strong>Disponibilidad:</strong> 0") {
+                    item.querySelector('#dispo').style.color = "red";
+                    item.querySelector('#dispo').innerHTML = "No hay disponibilidad";
+                    item.querySelector('button').disabled = true;
+
+                } else {
+                    item.querySelector('#dispo').style.color = "green";
+                }
+            });
+        
+        }
+    
+
+        async function alquilar(bikeId, storeId) {
                 
                 const data = {
                     bike: bikeId,
@@ -77,13 +95,14 @@
                 })
                 .then(data => {
                     alert("Alquiler realizado con exito");
+                    window.location.href = "index.html";
                     
                 })
                 .catch(error => console.error(error));
 
         }
+        
  </script>
- <div id="popUp"></div>
  </div>
 </body>
 </html>
